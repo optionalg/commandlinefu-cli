@@ -107,7 +107,7 @@ def usage():
         "-r":"\t\tShow random commandlinefu command",
         "-k <keyword>":"\tSearch keyword",
         "-u <command>":"\tSearch command using ",
-        "-t <command>":"\tSearch tagged commands",
+        "-t <tag>":"\tSearch tagged commands",
         "-h":"\t\tShow help",
         "-v":"\t\tVersion",
         }
