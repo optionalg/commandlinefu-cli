@@ -23,7 +23,7 @@ def main():
         usage()
         sys.exit(-1)
     for opt, command in opts:
-        #command = quote(command)
+        command = quote(command)
         if opt == "-v":
             print "commandlinefu v%g" % VERSION
             sys.exit(0)
