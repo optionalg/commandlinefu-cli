@@ -7,7 +7,7 @@ from urllib import quote
 from base64 import b64encode
 from json import loads
 import re
-VERSION = 0.2
+VERSION = 0.3
 
 def main():
     option = 0
@@ -16,8 +16,8 @@ def main():
         sys.exit(1)
     try:
         opts, args = getopt.getopt(sys.argv[1:]
-                                   ,"harvt:u:c:"
-                                   ,["help", "all", "command=", "tagged", "random", "using"])
+                                   ,"harvt:u:k:"
+                                   ,["help", "all", "keyword", "tagged", "random", "using"])
     except getopt.GetoptError, err:
         print str(err)
         usage()
@@ -34,7 +34,7 @@ def main():
             rjson = request_page("browse")
         elif opt in ("-r", "--random"):
             rjson = request_page("random")
-        elif opt in ("-c", "--command"):
+        elif opt in ("-k", "--keyword"):
             rjson = request_page("matching/%s/%s/sort-by-votes" % (command, b64encode(command)))
         elif opt in ("-u", "--using"):
             rjson = request_page("using/%s/sort-by-votes" % (command))
@@ -105,9 +105,9 @@ def usage():
     commands = {
         "-a":"\t\tShow latest commandlinefu submissions",
         "-r":"\t\tShow random commandlinefu command",
-        "-c <command>":"\tSearch for specific command",
+        "-k <serchword>":"\tSearch keyword",
         "-u <command>":"\tSearch command using ",
-        "-t <command>":"\tSearch for tagged commands",
+        "-t <command>":"\tSearch tagged commands",
         "-h":"\t\tShow help",
         "-v":"\t\tVersion",
         }
