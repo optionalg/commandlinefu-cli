@@ -105,7 +105,7 @@ def usage():
     commands = {
         "-a":"\t\tShow latest commandlinefu submissions",
         "-r":"\t\tShow random commandlinefu command",
-        "-k <serchword>":"\tSearch keyword",
+        "-k <keyword>":"\tSearch keyword",
         "-u <command>":"\tSearch command using ",
         "-t <command>":"\tSearch tagged commands",
         "-h":"\t\tShow help",
